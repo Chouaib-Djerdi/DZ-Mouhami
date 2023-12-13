@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "authentication", #add
+    "lawyers",#new
     
     #new
     'django.contrib.sites',
@@ -83,6 +84,8 @@ SOCIALACCOUNT_PROVIDERS = {
 LOGIN_REDIRECT_URL = '/' #here the link where he should go after login (u can change it)
 LOGOUT_REDIRECT_URL = '/' #and here after logout (u can change it)
 #fin new
+
+
 ROOT_URLCONF = "backend.urls"
 
 TEMPLATES = [
