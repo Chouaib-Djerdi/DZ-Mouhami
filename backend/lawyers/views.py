@@ -13,14 +13,14 @@ class LawyerRegisterView(generics.CreateAPIView):
     serializer_class = LawyerSerializer
 
     def perform_create(self, serializer):
-        # Extract any additional data from the request or perform custom logic
+
         validated_data = serializer.validated_data
         
         additional_data = self.request.data.get('additional_data')
         
         serializer.validated_data['approved'] = False
 
-        # Call the super method to save the lawyer instance
+
         super(LawyerRegisterView, self).perform_create(serializer)
 
 
