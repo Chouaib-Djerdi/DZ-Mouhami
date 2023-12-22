@@ -53,4 +53,28 @@ class LawyerLogoutView(APIView):
         logout(request)
         return Response({'detail': 'Successfully logged out'}, status=status.HTTP_200_OK)
 
+class ApproveLawyerView(APIView):
+    def post(self, request, *args, **kwargs):
+        lawyer_id = request.data.get('lawyer_id')
+        try:
+            lawyer = Lawyer.objects.get(pk=lawyer_id)
+        except Lawyer.DoesNotExist:
+            return Response({'error': 'Lawyer not found'}, status=status.HTTP_404_NOT_FOUND)
 
+        lawyer.approved = True
+        lawyer.save()
+
+        return Response({'detail': 'Lawyer approved successfully'}, status=status.HTTP_200_OK)
+
+
+class DeleteLawyerView(APIView):
+    def post(self, request, *args, **kwargs):
+        lawyer_id = request.data.get('lawyer_id')
+        try:
+            lawyer = Lawyer.objects.get(pk=lawyer_id)
+        except Lawyer.DoesNotExist:
+            return Response({'error': 'Lawyer not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        lawyer.delete()
+
+        return Response({'detail': 'Lawyer deleted successfully'}, status=status.HTTP_200_OK)
