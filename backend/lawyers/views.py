@@ -7,6 +7,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.authtoken.models import Token
 from .models import Lawyer
 from .serializers import LawyerSerializer
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAdminUser
 
 class LawyerRegisterView(generics.CreateAPIView):
     queryset = Lawyer.objects.all()
@@ -53,6 +55,13 @@ class LawyerLogoutView(APIView):
         logout(request)
         return Response({'detail': 'Successfully logged out'}, status=status.HTTP_200_OK)
 
+
+
+# The `@permission_classes([IsAdminUser])` decorator is used to specify the permission classes for the
+# `ApproveLawyerView` class-based view. In this case, it is specifying that only users with the
+# `IsAdminUser` permission should be allowed to access the `post` method of the `ApproveLawyerView`
+# view.
+@permission_classes([IsAdminUser])
 class ApproveLawyerView(APIView):
     def post(self, request, *args, **kwargs):
         lawyer_id = request.data.get('lawyer_id')
@@ -66,7 +75,7 @@ class ApproveLawyerView(APIView):
 
         return Response({'detail': 'Lawyer approved successfully'}, status=status.HTTP_200_OK)
 
-
+@permission_classes([IsAdminUser])
 class DeleteLawyerView(APIView):
     def post(self, request, *args, **kwargs):
         lawyer_id = request.data.get('lawyer_id')
