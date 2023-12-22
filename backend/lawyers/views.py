@@ -56,11 +56,6 @@ class LawyerLogoutView(APIView):
         return Response({'detail': 'Successfully logged out'}, status=status.HTTP_200_OK)
 
 
-
-# The `@permission_classes([IsAdminUser])` decorator is used to specify the permission classes for the
-# `ApproveLawyerView` class-based view. In this case, it is specifying that only users with the
-# `IsAdminUser` permission should be allowed to access the `post` method of the `ApproveLawyerView`
-# view.
 @permission_classes([IsAdminUser])
 class ApproveLawyerView(APIView):
     def post(self, request, *args, **kwargs):
