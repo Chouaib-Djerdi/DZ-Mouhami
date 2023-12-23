@@ -7,6 +7,9 @@ from rest_framework.permissions import AllowAny
 from rest_framework.authtoken.models import Token
 from .models import Lawyer
 from .serializers import LawyerSerializer
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAdminUser
+from django.db.models import Q
 
 class LawyerRegisterView(generics.CreateAPIView):
     queryset = Lawyer.objects.all()
@@ -52,5 +55,55 @@ class LawyerLogoutView(APIView):
         # Logout the user
         logout(request)
         return Response({'detail': 'Successfully logged out'}, status=status.HTTP_200_OK)
+
+
+@permission_classes([IsAdminUser])
+class ApproveLawyerView(APIView):
+    def post(self, request, *args, **kwargs):
+        lawyer_id = request.data.get('lawyer_id')
+        try:
+            lawyer = Lawyer.objects.get(pk=lawyer_id)
+        except Lawyer.DoesNotExist:
+            return Response({'error': 'Lawyer not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        lawyer.approved = True
+        lawyer.save()
+
+        return Response({'detail': 'Lawyer approved successfully'}, status=status.HTTP_200_OK)
+
+@permission_classes([IsAdminUser])
+class DeleteLawyerView(APIView):
+    def post(self, request, *args, **kwargs):
+        lawyer_id = request.data.get('lawyer_id')
+        try:
+            lawyer = Lawyer.objects.get(pk=lawyer_id)
+        except Lawyer.DoesNotExist:
+            return Response({'error': 'Lawyer not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        lawyer.delete()
+
+        return Response({'detail': 'Lawyer deleted successfully'}, status=status.HTTP_200_OK)
+
+class SearchView(generics.ListAPIView):
+    serializer_class = LawyerSerializer
+
+    def get_queryset(self):
+        specialty = self.request.query_params.get('specialty', '')
+        location = self.request.query_params.get('location', '')
+        language = self.request.query_params.get('language', '')
+        name = self.request.query_params.get('name', '')
+        queryset = Lawyer.objects.all()
+
+        if specialty:
+            queryset = queryset.filter(specialities__icontains=specialty)
+
+        if location:
+            queryset = queryset.filter(address__icontains=location)
+
+        if name:
+            queryset = queryset.filter(Q(firstname__icontains=name) | Q(lastname__icontains=name))
+
+        return queryset
+
 
 
