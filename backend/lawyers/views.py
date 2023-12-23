@@ -92,8 +92,6 @@ class SearchView(generics.ListAPIView):
         location = self.request.query_params.get('location', '')
         language = self.request.query_params.get('language', '')
         name = self.request.query_params.get('name', '')
-        family_name = self.request.query_params.get('family_name', '')
-
         queryset = Lawyer.objects.all()
 
         if specialty:
@@ -104,9 +102,6 @@ class SearchView(generics.ListAPIView):
 
         if name:
             queryset = queryset.filter(Q(firstname__icontains=name) | Q(lastname__icontains=name))
-
-        if family_name:
-            queryset = queryset.filter(Q(firstname__icontains=family_name) | Q(lastname__icontains=family_name))
 
         return queryset
 
