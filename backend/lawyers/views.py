@@ -9,6 +9,7 @@ from .models import Lawyer
 from .serializers import LawyerSerializer
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import IsAdminUser
+from django.db.models import Q
 
 class LawyerRegisterView(generics.CreateAPIView):
     queryset = Lawyer.objects.all()
@@ -82,3 +83,32 @@ class DeleteLawyerView(APIView):
         lawyer.delete()
 
         return Response({'detail': 'Lawyer deleted successfully'}, status=status.HTTP_200_OK)
+
+class SearchView(generics.ListAPIView):
+    serializer_class = LawyerSerializer
+
+    def get_queryset(self):
+        specialty = self.request.query_params.get('specialty', '')
+        location = self.request.query_params.get('location', '')
+        language = self.request.query_params.get('language', '')
+        name = self.request.query_params.get('name', '')
+        family_name = self.request.query_params.get('family_name', '')
+
+        queryset = Lawyer.objects.all()
+
+        if specialty:
+            queryset = queryset.filter(specialities__icontains=specialty)
+
+        if location:
+            queryset = queryset.filter(address__icontains=location)
+
+        if name:
+            queryset = queryset.filter(Q(firstname__icontains=name) | Q(lastname__icontains=name))
+
+        if family_name:
+            queryset = queryset.filter(Q(firstname__icontains=family_name) | Q(lastname__icontains=family_name))
+
+        return queryset
+
+
+
