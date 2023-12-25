@@ -23,8 +23,14 @@ class LawyerRegisterView(generics.CreateAPIView):
         
         serializer.validated_data['approved'] = False
 
-
         super(LawyerRegisterView, self).perform_create(serializer)
+        lawyer_instance = serializer.instance
+
+        if additional_data:
+            selected_working_days = additional_data.get('selected_working_days', [])
+            lawyer_instance.workingDays.set(selected_working_days)
+            lawyer_instance.workingHours = additional_data.get('workingHours')
+            lawyer_instance.save()
 
 
 class LawyerLoginView(APIView):
@@ -90,7 +96,6 @@ class SearchView(generics.ListAPIView):
     def get_queryset(self):
         specialty = self.request.query_params.get('specialty', '')
         location = self.request.query_params.get('location', '')
-        language = self.request.query_params.get('language', '')
         name = self.request.query_params.get('name', '')
         queryset = Lawyer.objects.all()
 

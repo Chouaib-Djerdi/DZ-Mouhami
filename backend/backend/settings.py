@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "authentication", #add
     "lawyers",#new
+    "appointments",#new
     
     #new
     'django.contrib.sites',
