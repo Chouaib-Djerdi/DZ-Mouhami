@@ -28,23 +28,21 @@ class Lawyer(models.Model):
         ('dimanche', 'Dimanche'),
     ]
 
-    workingDays = ArrayField(
-        models.CharField(max_length=10, choices=WORKING_DAY_CHOICES),
-        size=7,
+    workingDays = models.CharField(
+        max_length=50,
+        choices=WORKING_DAY_CHOICES,
+        help_text='Select working days',
+        blank=True
     )
-    workingHours = models.TimeField(
-        help_text='Working hours (24-hour format) starting at 8:00 a.m and end at 06:00 p.m',
+
+    workingHours = models.PositiveIntegerField(
+        help_text='Number of hours the lawyer works in a day',
         validators=[
-            MinValueValidator(limit_value='08:00:00'),
-            MaxValueValidator(limit_value='18:00:00')
+            MinValueValidator(limit_value=1),
+            MaxValueValidator(limit_value=24)
         ]
     )
     approved = models.BooleanField(default=False)
-    availability = models.BooleanField(default=True)
-
-    def update_availability(self, start_time, end_time, available):
-        self.availability = available
-        self.save()
 
     def __str__(self):
         return f"{self.firstname} {self.lastname}"
