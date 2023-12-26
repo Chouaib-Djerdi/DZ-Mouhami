@@ -36,7 +36,7 @@ class Lawyer(models.Model):
     )
 
     workingHours = models.PositiveIntegerField(
-        help_text='Number of hours the lawyer works in a day',
+        help_text='Number of hours the lawyer works in a day starting at 8:00 to 16:00 (without the hour of lunch)',
         validators=[
             MinValueValidator(limit_value=1),
             MaxValueValidator(limit_value=24)
