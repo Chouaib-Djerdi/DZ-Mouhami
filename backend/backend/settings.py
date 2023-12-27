@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "authentication", #add
     "lawyers",#new
     "appointments",#new
+    "ratings", #new
     
     #new
     'django.contrib.sites',

@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.postgres.fields import ArrayField
 
+
 class Lawyer(models.Model):
     id = models.AutoField(primary_key=True)
     firstname = models.CharField(max_length=255)
@@ -43,6 +44,8 @@ class Lawyer(models.Model):
         ]
     )
     approved = models.BooleanField(default=False)
+    ratings = models.FloatField(default=0.0)
+    
 
     def __str__(self):
         return f"{self.firstname} {self.lastname}"

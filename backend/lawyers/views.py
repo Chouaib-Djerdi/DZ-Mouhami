@@ -10,6 +10,8 @@ from .serializers import LawyerSerializer
 from rest_framework.decorators import permission_classes
 from rest_framework.permissions import IsAdminUser
 from django.db.models import Q
+from django.db.models import Avg
+from ratings.models import Rating
 
 class LawyerRegisterView(generics.CreateAPIView):
     queryset = Lawyer.objects.all()
@@ -109,6 +111,14 @@ class SearchView(generics.ListAPIView):
             queryset = queryset.filter(Q(firstname__icontains=name) | Q(lastname__icontains=name))
 
         return queryset
+
+class LawyerListCreateView(generics.ListCreateAPIView):
+    queryset = Lawyer.objects.all()
+    serializer_class = LawyerSerializer
+
+class LawyerDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Lawyer.objects.all()
+    serializer_class = LawyerSerializer
 
 
 
