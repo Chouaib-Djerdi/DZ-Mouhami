@@ -49,7 +49,7 @@ class Lawyer(models.Model):
         blank=True
     )
     subscription_type = models.CharField(max_length=50, choices=[("1_month", "1 Month"), ("3_months", "3 Months"), ("1_year", "1 Year")], blank=True, null=True)
-    payment_proof = models.FileField(upload_to='subscription_payment_proofs/', null=True, blank=True)
+    payment_proof = models.ImageField(upload_to='subscription_payment_proofs/', null=True, blank=True)
     approved = models.BooleanField(default=False)
     ratings = models.FloatField(default=0.0)
     
