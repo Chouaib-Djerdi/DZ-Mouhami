@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
-from django.contrib.postgres.fields import ArrayField
+
 
 
 class Lawyer(models.Model):
@@ -29,20 +29,27 @@ class Lawyer(models.Model):
         ('dimanche', 'Dimanche'),
     ]
 
+    WORKING_HOUR_CHOICES = [
+        ('08:00', '08:00 - 10:00'),
+        ('10:00', '10:00 - 12:00'),
+        ('12:00', '12:00 - 14:00'),
+        ('14:00', '14:00 - 16:00'),
+        ('16:00', '16:00 - 18:00'),
+    ]
+
     workingDays = models.CharField(
         max_length=50,
         choices=WORKING_DAY_CHOICES,
-        help_text='Select working days',
         blank=True
     )
 
-    workingHours = models.PositiveIntegerField(
-        help_text='Number of hours the lawyer works in a day starting at 8:00 to 16:00 (without the hour of lunch)',
-        validators=[
-            MinValueValidator(limit_value=1),
-            MaxValueValidator(limit_value=24)
-        ]
+    workingHours = models.CharField(
+        max_length=50,
+        choices=WORKING_HOUR_CHOICES,
+        blank=True
     )
+    subscription_type = models.CharField(max_length=50, choices=[("1_month", "1 Month"), ("3_months", "3 Months"), ("1_year", "1 Year")], blank=True, null=True)
+    payment_proof = models.FileField(upload_to='subscription_payment_proofs/', null=True, blank=True)
     approved = models.BooleanField(default=False)
     ratings = models.FloatField(default=0.0)
     
