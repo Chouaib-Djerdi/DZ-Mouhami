@@ -5,7 +5,7 @@ const RatingStar = ({ rating }) => {
       width="20"
       height="20"
       viewBox="0 0 24 24"
-      fill={index < rating ? "gold" : "gray"}
+      fill={index < rating ? "#3282B8" : "gray"}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
