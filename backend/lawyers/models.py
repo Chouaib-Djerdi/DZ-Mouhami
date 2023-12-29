@@ -8,7 +8,7 @@ class Lawyer(models.Model):
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
-    profilePicture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True)
+    profilePicture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True, default='profile_pictures/images.png')
     address = models.CharField(max_length=255)
     phoneNumber = models.CharField(max_length=12)
     socialMediaLink = models.URLField()
