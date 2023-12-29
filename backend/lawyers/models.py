@@ -17,9 +17,9 @@ class Lawyer(models.Model):
     personalWebsiteLink = models.URLField(null=True, blank=True)
     mapsPosition = models.URLField(blank=True, null=True)
     SPECIALITY_CHOICES = [
-        ('family_law', 'Family Law'),
-        ('criminal_law', 'Criminal Law'),
-        ('business_law', 'Business Law'),
+        ('family_law', 'Droit de la famille'),
+        ('criminal_law', 'Droit pénal'),
+        ('business_law', 'Droit des affaires'),
         # Add more choices as needed
     ]
 
