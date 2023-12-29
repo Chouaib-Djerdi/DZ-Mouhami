@@ -15,8 +15,7 @@ class Lawyer(models.Model):
     email = models.EmailField(unique=True)
     description = models.TextField()
     personalWebsiteLink = models.URLField(null=True, blank=True)
-    mapsPosition = models.CharField(max_length=255)
-    subscriptionID = models.IntegerField()
+    mapsPosition = models.URLField(blank=True, null=True)
     SPECIALITY_CHOICES = [
         ('family_law', 'Family Law'),
         ('criminal_law', 'Criminal Law'),

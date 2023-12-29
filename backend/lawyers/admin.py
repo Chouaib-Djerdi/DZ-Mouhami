@@ -3,7 +3,7 @@ from .models import Lawyer
 
 @admin.register(Lawyer)
 class LawyerAdmin(admin.ModelAdmin):
-    list_display = ('id', 'firstname', 'lastname', 'email', 'phoneNumber', 'subscriptionID')
+    list_display = ('id', 'firstname', 'lastname', 'email', 'phoneNumber')
     search_fields = ('firstname', 'lastname', 'email', 'phoneNumber')
 
     class Meta:
