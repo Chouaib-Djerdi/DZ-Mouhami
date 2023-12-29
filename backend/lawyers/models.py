@@ -17,7 +17,18 @@ class Lawyer(models.Model):
     personalWebsiteLink = models.URLField(null=True, blank=True)
     mapsPosition = models.CharField(max_length=255)
     subscriptionID = models.IntegerField()
-    specialities = models.TextField()
+    SPECIALITY_CHOICES = [
+        ('family_law', 'Family Law'),
+        ('criminal_law', 'Criminal Law'),
+        ('business_law', 'Business Law'),
+        # Add more choices as needed
+    ]
+
+    specialities = models.CharField(
+        max_length=50,
+        choices=SPECIALITY_CHOICES,
+        blank=True
+    )
 
     WORKING_DAY_CHOICES = [
         ('lundi', 'Lundi'),
