@@ -16,6 +16,10 @@
     --primary: 199 80% 29%;
     --primary-foreground: 0 0% 98%;
 
+    --normal-blue: #3282b8;
+    --light-blue: #bbe1fa;
+    --gray-dark: #1b262c;
+
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
 
