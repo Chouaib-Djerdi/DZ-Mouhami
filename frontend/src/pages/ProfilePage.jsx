@@ -13,6 +13,7 @@ import {
   RatingOverview,
 } from "../custom-components";
 import Contact from "../custom-components/Contact";
+import { dollarIcon, medalStarIcon, verifyIcon } from "../assets/icons";
 
 const profile = {
   name: "Ibrahim Hechmann",
@@ -57,14 +58,24 @@ const ratings = {
 
 const ProfilePage = () => {
   return (
-    <div className="py-20 px-40">
+    <div className="py-10 px-40">
       <ProfileOverview {...profile} />
-      <nav className="space-x-8 p-3 border shadow-sm rounded-lg my-3">
-        <Button variant="ghost">À propos</Button>
-        <Button variant="ghost">Contact</Button>
-        <Button variant="ghost">Cout</Button>
-        <Button variant="ghost">Commentaires</Button>
-        <Button variant="ghost">CV</Button>
+      <nav className="space-x-8 p-3 border shadow-sm rounded-lg my-3 sticky top-0 z-50 bg-white">
+        <Button variant="ghost">
+          <a href="#apropos">À propos</a>
+        </Button>
+        <Button variant="ghost">
+          <a href="#contact">Contact</a>
+        </Button>
+        <Button variant="ghost">
+          <a href="#commentaires">Commentaires</a>
+        </Button>
+        <Button variant="ghost">
+          <a href="#cout">Coût</a>
+        </Button>
+        <Button variant="ghost">
+          <a href="#cv">CV</a>
+        </Button>
       </nav>
       <div className="flex justify-between gap-10 my-10">
         <div className="flex flex-col gap-20">
@@ -78,8 +89,11 @@ const ProfilePage = () => {
             location={profile.location}
           />
           <Separator />
-          <div className="space-y-5">
-            <h1 className="text-xl font-semibold underline">Commentaires</h1>
+          <div className="space-y-5" id="commentaires">
+            <div className="flex gap-2 border-l-4 border-primary pl-2">
+              <img src={medalStarIcon} alt="comments-icon" />
+              <h1 className="text-xl font-semibold">Commentaires</h1>
+            </div>
             <RatingOverview {...ratings} />
             <div>
               {comments.map((comment, index) => (
@@ -88,8 +102,11 @@ const ProfilePage = () => {
             </div>
           </div>
           <Separator />
-          <div className="space-y-3">
-            <h1 className="text-xl font-semibold underline">Cout</h1>
+          <div className="space-y-3" id="cout">
+            <div className="flex gap-2 border-l-4 border-primary pl-2">
+              <img src={dollarIcon} alt="cost-icon" />
+              <h1 className="text-xl font-semibold">Coût</h1>
+            </div>
             <p>
               Nous n&apos;avons trouvé aucune information sur les coûts pour cet
               avocat

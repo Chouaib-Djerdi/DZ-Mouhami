@@ -9,6 +9,11 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import RatingStar from "./RatingStar";
+import {
+  calendarTickIcon,
+  locationTickIcon,
+  verifyIcon,
+} from "../assets/icons";
 
 const ProfileOverview = ({ name, pfp, location, rating, commentsNumber }) => {
   return (
@@ -33,34 +38,44 @@ const ProfileOverview = ({ name, pfp, location, rating, commentsNumber }) => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="w-[30%]">
           <Card>
-            <CardHeader>
+            <CardHeader className="gap-3">
               <CardTitle>Licence depuis 15 ans</CardTitle>
               <Separator />
-              <div className="grid grid-cols-2">
-                <div>Etat</div>
-                <div>Algerie</div>
-
-                <div>Etat</div>
-                <div>Algerie</div>
-
-                <div>Etat</div>
-                <div>Algerie</div>
+              <div className="flex flex-col gap-2 text-graydark">
+                <div className="flex gap-3 items-center">
+                  <img src={locationTickIcon} alt="location-icon" />
+                  <p>Wilaya</p>
+                  <p>Setif</p>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <img src={calendarTickIcon} alt="calendar-icon" />
+                  <p>Acquis</p>
+                  <p>Acquis</p>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <img src={verifyIcon} alt="verify-icon" />
+                  <p>Status</p>
+                  <p>Actif et autorisé à exercer le droit</p>
+                </div>
               </div>
             </CardHeader>
             {/* <CardContent>
                 <p>Card Content</p>
-              </CardContent>
-              <CardFooter>
-                <p>Card Footer</p>
-              </CardFooter> */}
+              </CardContent> */}
+            <CardFooter>
+              <p>
+                We have not found any instances of professional misconduct for
+                this lawyer.
+              </p>
+            </CardFooter>
           </Card>
         </div>
       </CardHeader>
-      <CardContent></CardContent>
+      {/* <CardContent></CardContent>
 
-      <CardFooter></CardFooter>
+      <CardFooter></CardFooter> */}
     </Card>
   );
 };

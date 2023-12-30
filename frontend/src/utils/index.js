@@ -28,3 +28,51 @@ export const footerLinks = [
     ],
   },
 ];
+
+export const plans = [
+  {
+    title: "Plan Base",
+    price: "6000",
+    options: [
+      { label: "Votre site en ligne", value: true },
+      { label: "Votre propre design", value: true },
+      { label: "Site en 2 langues", value: false },
+      { label: "Emails illimités", value: true },
+      { label: "Certificat SSL (sécurité)", value: true },
+      { label: "Profile sur l'annuaire DZ-M", value: true },
+      { label: "Génération de prospects", value: false },
+      { label: "CRM pour vos contacts", value: false },
+      { label: "Hébergement inclu", value: true },
+    ],
+  },
+  {
+    title: "Plan Pro",
+    price: "9000",
+    options: [
+      { label: "Votre site en ligne", value: true },
+      { label: "Votre propre design", value: true },
+      { label: "Site en 2 langues", value: true },
+      { label: "Emails illimités", value: true },
+      { label: "Certificat SSL (sécurité)", value: true },
+      { label: "Profile sur l'annuaire DZ-M", value: true },
+      { label: "Génération de prospects", value: true },
+      { label: "CRM pour vos contacts", value: false },
+      { label: "Hébergement inclu", value: true },
+    ],
+  },
+  {
+    title: "Plan Ultime",
+    price: "15000",
+    options: [
+      { label: "Votre site en ligne", value: true },
+      { label: "Votre propre design", value: true },
+      { label: "Site en 2 langues", value: true },
+      { label: "Emails illimités", value: true },
+      { label: "Certificat SSL (sécurité)", value: true },
+      { label: "Profile sur l'annuaire DZ-M", value: true },
+      { label: "Génération de prospects", value: true },
+      { label: "CRM pour vos contacts", value: true },
+      { label: "Hébergement inclu", value: true },
+    ],
+  },
+];

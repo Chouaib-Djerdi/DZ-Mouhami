@@ -118,7 +118,7 @@ const Nav = () => {
         </NavigationMenu>
       </div>
       <div className="flex gap-2">
-        <Link to="/register">
+        <Link to="/offers">
           <Button>Etre un Avocat</Button>
         </Link>
         <GoogleLogin
