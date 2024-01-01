@@ -14,6 +14,7 @@ import {
   locationTickIcon,
   verifyIcon,
 } from "../assets/icons";
+import { Link } from "react-router-dom";
 
 const ProfileOverview = ({ name, pfp, location, rating, commentsNumber }) => {
   return (
@@ -22,7 +23,9 @@ const ProfileOverview = ({ name, pfp, location, rating, commentsNumber }) => {
         <div className="flex gap-5">
           <div className="flex flex-col gap-3">
             <img src={pfp} alt="avocat-pfp" className="w-48 rounded-lg" />
-            <Button>Prendre un RDV</Button>
+            <Link to="/rdv">
+              <Button className="w-full">Prendre un RDV</Button>
+            </Link>
           </div>
           <div className="flex flex-col gap-2">
             <CardTitle className="text-4xl">{name}</CardTitle>
@@ -66,8 +69,8 @@ const ProfileOverview = ({ name, pfp, location, rating, commentsNumber }) => {
               </CardContent> */}
             <CardFooter>
               <p>
-                We have not found any instances of professional misconduct for
-                this lawyer.
+                Nous n’avons trouvé aucun cas de faute professionnelle pour cet
+                avocat.
               </p>
             </CardFooter>
           </Card>

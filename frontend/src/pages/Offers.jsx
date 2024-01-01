@@ -34,7 +34,7 @@ const Offers = () => {
             </ul>
             <div className="justify-self-end">
               <Link to="/register">
-                <Button variant="">Commander</Button>
+                <Button variant="lightBlue">Commander</Button>
               </Link>
             </div>
           </div>
