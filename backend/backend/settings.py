@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "corsheaders",
     "authentication", #add
     "lawyers",#new
+    "appointments",#new
+    "ratings", #new
     
     #new
     'django.contrib.sites',
@@ -161,3 +163,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Chouaib Dj : Add whitlist later !!!
 CORS_ORIGIN_ALLOW_ALL = True
+import os
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
