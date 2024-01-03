@@ -46,7 +46,7 @@ const ProfileCard = ({
         <p className="text-muted-foreground uppercase font-semibold tracking-wide">
           Description
         </p>
-        <p>{description}</p>
+        <p className="line-clamp-3">{description}</p>
       </CardFooter>
     </Card>
   );

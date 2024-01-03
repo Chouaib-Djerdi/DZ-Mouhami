@@ -90,9 +90,14 @@ const ProfilePage = () => {
           />
           <Separator />
           <div className="space-y-5" id="commentaires">
-            <div className="flex gap-2 border-l-4 border-primary pl-2">
-              <img src={medalStarIcon} alt="comments-icon" />
-              <h1 className="text-xl font-semibold">Commentaires</h1>
+            <div className="flex justify-between">
+              <div className="flex items-center gap-2 border-l-4 border-primary pl-2">
+                <img src={medalStarIcon} alt="comments-icon" />
+                <h1 className="text-xl font-semibold">Commentaires</h1>
+              </div>
+              <Button variant="outline">
+                <Link to="/review">Écrire une critique</Link>
+              </Button>
             </div>
             <RatingOverview {...ratings} />
             <div>

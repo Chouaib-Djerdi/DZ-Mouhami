@@ -8,6 +8,9 @@ import RatingComment from "./RatingComment";
 import Contributions from "./Contributions";
 import About from "./About";
 import ProfileOverview from "./ProfileOverview";
+import ResultCard from "./ResultCard";
+import { StarRating } from "./StarRating";
+
 export {
   Nav,
   ProfileCard,
@@ -19,4 +22,6 @@ export {
   Contributions,
   About,
   ProfileOverview,
+  ResultCard,
+  StarRating,
 };
