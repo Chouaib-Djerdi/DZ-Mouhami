@@ -145,35 +145,36 @@ const RdvForm = () => {
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="time"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Temps</FormLabel>
-                <Select
-                  onValueChange={field.onChange}
-                  defaultValue={field.value}
-                >
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Veuillez sélectionner une heure" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {WorkingHoursOptions.map((hour) => (
-                      <SelectItem value={hour.value}>{hour.label}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <FormDescription>
-                  Choisir une heure pour le rendez-vous
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
+          <div className="w-[240px]">
+            <FormField
+              control={form.control}
+              name="time"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Temps</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Veuillez sélectionner une heure" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {WorkingHoursOptions.map((hour) => (
+                        <SelectItem value={hour.value}>{hour.label}</SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormDescription>
+                    Choisir une heure pour le rendez-vous
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
           <Button type="submit" className="w-full">
             Soumettre
           </Button>

@@ -4,6 +4,7 @@ import {
   Offers,
   ProfilePage,
   RdvForm,
+  ReviewPage,
   SearchResult,
   SignInPage,
 } from "./pages";
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/search/:input" element={<SearchResult />} />
             <Route path="/rdv" element={<RdvForm />} />
+            <Route path="/review" element={<ReviewPage />} />
           </Routes>
           <Footer />
         </main>
