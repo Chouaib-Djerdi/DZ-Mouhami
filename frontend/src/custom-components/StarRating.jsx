@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Command, CommandItem } from "@/components/ui/command";
-import { Star } from "lucide-react";
+import { FaStar } from "react-icons/fa6";
 
 export function StarRating({ value, onChange }) {
   const [hoverValue, setHoverValue] = useState(0);
@@ -16,7 +16,7 @@ export function StarRating({ value, onChange }) {
           onMouseEnter={() => setHoverValue(star)}
           onMouseLeave={() => setHoverValue(0)}
         >
-          <Star />
+          <FaStar size={24} />
         </CommandItem>
       ))}
     </Command>
