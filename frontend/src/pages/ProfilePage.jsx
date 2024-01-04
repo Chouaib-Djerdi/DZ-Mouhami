@@ -14,6 +14,7 @@ import {
 } from "../custom-components";
 import Contact from "../custom-components/Contact";
 import { dollarIcon, medalStarIcon, verifyIcon } from "../assets/icons";
+import { comments, ratings } from "../utils";
 
 const profile = {
   name: "Ibrahim Hechmann",
@@ -25,35 +26,6 @@ const profile = {
   categories: ["Droit administratif", "Droit Affaires", "Droit civil"],
   commentsNumber: 39,
   phoneNumber: "(206) 717-8680",
-};
-
-const comments = [
-  {
-    username: "Chihab Hmz",
-    rating: 4,
-    title: "Un soutien incroyable dans une affaire hautement conflictuelle",
-    comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
-    timestamp: "September 13, 2023",
-  },
-  {
-    username: "Chihab Hmz",
-    rating: 4,
-    title: "Un soutien incroyable dans une affaire hautement conflictuelle",
-    comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
-    timestamp: "September 13, 2023",
-  },
-];
-
-const ratings = {
-  rating: 4.0,
-  commentsNumber: 39,
-  fivePercentage: 88,
-  fourPercentage: 67,
-  threePercentage: 44,
-  twoPercentage: 32,
-  onePercentage: 10,
 };
 
 const ProfilePage = () => {

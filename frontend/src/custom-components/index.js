@@ -10,6 +10,10 @@ import About from "./About";
 import ProfileOverview from "./ProfileOverview";
 import ResultCard from "./ResultCard";
 import { StarRating } from "./StarRating";
+import Overview from "./dashboard/Overview";
+import Commentaires from "./dashboard/Commentaires";
+import RdvList from "./dashboard/RdvList";
+import Settings from "./dashboard/Settings";
 
 export {
   Nav,
@@ -24,4 +28,8 @@ export {
   ProfileOverview,
   ResultCard,
   StarRating,
+  Overview,
+  Commentaires,
+  RdvList,
+  Settings,
 };

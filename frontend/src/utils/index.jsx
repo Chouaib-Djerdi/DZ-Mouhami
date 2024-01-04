@@ -1,3 +1,4 @@
+import { FaUsers } from "react-icons/fa6";
 import { avocatPfp } from "../assets/images";
 
 export const footerLinks = [
@@ -202,4 +203,115 @@ export const WorkingHoursOptions = [
   { value: "14-16", label: "14h-16h" },
   { value: "16-18", label: "16h-18h" },
   { value: "18-20", label: "18h-20h" },
+];
+
+export const stats = [
+  {
+    title: "Nombre de Commentaires",
+    nombre: "200",
+    unit: "commentaires",
+    icon: <FaUsers />,
+    report: "+20,1% par rapport au mois dernier",
+  },
+  {
+    title: "Nombre de Commentaires",
+    nombre: "200",
+    unit: "commentaires",
+    icon: <FaUsers />,
+    report: "+20,1% par rapport au mois dernier",
+  },
+  {
+    title: "Nombre de Commentaires",
+    nombre: "200",
+    unit: "commentaires",
+    icon: <FaUsers />,
+    report: "+20,1% par rapport au mois dernier",
+  },
+  {
+    title: "Nombre de Commentaires",
+    nombre: "200",
+    unit: "commentaires",
+    icon: <FaUsers />,
+    report: "+20,1% par rapport au mois dernier",
+  },
+];
+
+export const comments = [
+  {
+    username: "Chihab Hmz",
+    rating: 4,
+    title: "Un soutien incroyable dans une affaire hautement conflictuelle",
+    comment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
+    timestamp: "September 13, 2023",
+  },
+  {
+    username: "Chihab Hmz",
+    rating: 4,
+    title: "Un soutien incroyable dans une affaire hautement conflictuelle",
+    comment:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
+    timestamp: "September 13, 2023",
+  },
+];
+
+export const ratings = {
+  rating: 4.0,
+  commentsNumber: 39,
+  fivePercentage: 88,
+  fourPercentage: 67,
+  threePercentage: 44,
+  twoPercentage: 32,
+  onePercentage: 10,
+};
+
+export const list_rdvs = [
+  {
+    name: "Raid Salhi",
+    title: "J'ai un énorme conflit familial à propos de l'héritage",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, numquam qui eligendi hic blanditiis fuga voluptatum, facere tempora eos neque velit quod nesciunt iste cumque dolorem, totam temporibus. Architecto, recusandae!",
+    date: new Date(),
+    time: "10h-12h",
+  },
+  {
+    name: "Raid Salhi",
+    title: "J'ai un énorme conflit familial à propos de l'héritage",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, numquam qui eligendi hic blanditiis fuga voluptatum, facere tempora eos neque velit quod nesciunt iste cumque dolorem, totam temporibus. Architecto, recusandae!",
+    date: new Date(),
+    time: "10h-12h",
+  },
+  {
+    name: "Raid Salhi",
+    title: "J'ai un énorme conflit familial à propos de l'héritage",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, numquam qui eligendi hic blanditiis fuga voluptatum, facere tempora eos neque velit quod nesciunt iste cumque dolorem, totam temporibus. Architecto, recusandae!",
+    date: new Date(),
+    time: "10h-12h",
+  },
+  {
+    name: "Raid Salhi",
+    title: "J'ai un énorme conflit familial à propos de l'héritage",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, numquam qui eligendi hic blanditiis fuga voluptatum, facere tempora eos neque velit quod nesciunt iste cumque dolorem, totam temporibus. Architecto, recusandae!",
+    date: new Date(),
+    time: "10h-12h",
+  },
+  {
+    name: "Raid Salhi",
+    title: "J'ai un énorme conflit familial à propos de l'héritage",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, numquam qui eligendi hic blanditiis fuga voluptatum, facere tempora eos neque velit quod nesciunt iste cumque dolorem, totam temporibus. Architecto, recusandae!",
+    date: new Date(),
+    time: "10h-12h",
+  },
+  {
+    name: "Raid Salhi",
+    title: "J'ai un énorme conflit familial à propos de l'héritage",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, numquam qui eligendi hic blanditiis fuga voluptatum, facere tempora eos neque velit quod nesciunt iste cumque dolorem, totam temporibus. Architecto, recusandae!",
+    date: new Date(),
+    time: "10h-12h",
+  },
 ];

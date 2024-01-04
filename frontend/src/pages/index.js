@@ -6,7 +6,7 @@ import SearchResult from "./SearchResult";
 import RdvForm from "./RdvForm";
 import ReviewPage from "./ReviewPage";
 import LawyerRegister from "./LawyerRegister";
-
+import LawyerDashboard from "./LawyerDashboard";
 export {
   Landing,
   SignInPage,
@@ -16,4 +16,5 @@ export {
   RdvForm,
   ReviewPage,
   LawyerRegister,
+  LawyerDashboard,
 };

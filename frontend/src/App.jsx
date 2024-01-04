@@ -8,13 +8,14 @@ import {
   ReviewPage,
   SearchResult,
   SignInPage,
+  LawyerDashboard,
 } from "./pages";
 import { Nav, Footer } from "./custom-components";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const MainContent = () => {
   const location = useLocation();
-  const hideOnRoutes = ["/compte"];
+  const hideOnRoutes = ["/compte", "/compte/avocat"];
 
   return (
     <main>
@@ -30,6 +31,8 @@ const MainContent = () => {
         <Route path="/rdv" element={<RdvForm />} />
         <Route path="/review" element={<ReviewPage />} />
         <Route path="/compte" element={<LawyerRegister />} />
+        {/* path="/avocat:id" */}
+        <Route path="/compte/avocat" element={<LawyerDashboard />} />
       </Routes>
 
       {!hideOnRoutes.includes(location.pathname) && <Footer />}
