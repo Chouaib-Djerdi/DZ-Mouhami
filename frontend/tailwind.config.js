@@ -20,6 +20,7 @@ module.exports = {
       backgroundImage: {
         hero: "url('assets/images/bg-hero.svg')",
         heroo: "url('assets/images/bg-hero22.jpg')",
+        side: "url('assets/images/side-image.jpg')",
       },
       colors: {
         border: "hsl(var(--border))",

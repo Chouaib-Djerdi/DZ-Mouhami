@@ -141,3 +141,65 @@ export const wilayas = [
   { id: "47", code: "47", nom: "Gharda\u00efa" },
   { id: "48", code: "48", nom: "Relizane" },
 ];
+
+export const components = [
+  {
+    title: "Alert Dialog",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+  {
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  {
+    title: "Scroll-area",
+    href: "/docs/primitives/scroll-area",
+    description: "Visually or semantically separates content.",
+  },
+  {
+    title: "Tabs",
+    href: "/docs/primitives/tabs",
+    description:
+      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  },
+  {
+    title: "Tooltip",
+    href: "/docs/primitives/tooltip",
+    description:
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
+];
+
+export const CategoryOptions = [
+  { value: "civil", label: "Civil Law" },
+  { value: "criminal", label: "Criminal Law" },
+  { value: "family", label: "Family Law" },
+];
+
+export const WorkingDaysOptions = [
+  { value: "dimanche", label: "Dimanche" },
+  { value: "lundi", label: "Lundi" },
+  { value: "mardi", label: "Mardi" },
+  { value: "mercredi", label: "Mercredi" },
+  { value: "jeudi", label: "Jeudi" },
+  { value: "venderedi", label: "Venderedi" },
+  { value: "samedi", label: "Samedi" },
+];
+
+export const WorkingHoursOptions = [
+  { value: "8-10", label: "8h-10h" },
+  { value: "10-12", label: "10h-12h" },
+  { value: "14-16", label: "14h-16h" },
+  { value: "16-18", label: "16h-18h" },
+  { value: "18-20", label: "18h-20h" },
+];

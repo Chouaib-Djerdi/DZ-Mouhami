@@ -18,30 +18,13 @@ import { Textarea } from "@/components/ui/textarea";
 
 import Select from "react-select";
 import { cn } from "@/lib/utils";
-
-const CategoryOptions = [
-  { value: "civil", label: "Civil Law" },
-  { value: "criminal", label: "Criminal Law" },
-  { value: "family", label: "Family Law" },
-];
-
-const WorkingDaysOptions = [
-  { value: "dimanche", label: "Dimanche" },
-  { value: "lundi", label: "Lundi" },
-  { value: "mardi", label: "Mardi" },
-  { value: "mercredi", label: "Mercredi" },
-  { value: "jeudi", label: "Jeudi" },
-  { value: "venderedi", label: "Venderedi" },
-  { value: "samedi", label: "Samedi" },
-];
-
-const WorkingHoursOptions = [
-  { value: "8-10", label: "8h-10h" },
-  { value: "10-12", label: "10h-12h" },
-  { value: "14-16", label: "14h-16h" },
-  { value: "16-18", label: "16h-18h" },
-  { value: "18-20", label: "18h-20h" },
-];
+import { useParams } from "react-router-dom";
+import { postLawyerForm } from "../utils/fetchAPI";
+import {
+  WorkingDaysOptions,
+  WorkingHoursOptions,
+  CategoryOptions,
+} from "../utils";
 
 const multiSelectSchema = z.object({
   value: z.string(),
@@ -58,9 +41,9 @@ const formSchema = z
     password: z.string().min(8),
     passwordConfirm: z.string(),
     pfp: z.any(),
-    categories: z.array(multiSelectSchema),
-    workingDays: z.array(multiSelectSchema),
-    workingHours: z.array(multiSelectSchema),
+    categories: z.array(multiSelectSchema).min(1),
+    workingDays: z.array(multiSelectSchema).min(1),
+    workingHours: z.array(multiSelectSchema).min(1),
     urls: z
       .array(
         z.object({
@@ -68,6 +51,7 @@ const formSchema = z
         })
       )
       .optional(),
+    plan: z.string(),
   })
   .refine(
     (data) => {
@@ -77,6 +61,8 @@ const formSchema = z
   );
 
 const SignInPage = () => {
+  const { plan } = useParams();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -87,7 +73,11 @@ const SignInPage = () => {
       description: "",
       password: "",
       passwordConfirm: "",
+      categories: [CategoryOptions[0]],
+      workingDays: [WorkingDaysOptions[0], WorkingDaysOptions[1]],
+      workingHours: [WorkingHoursOptions[0], WorkingHoursOptions[1]],
       urls: [],
+      plan: plan,
     },
   });
 
@@ -98,6 +88,7 @@ const SignInPage = () => {
 
   const handleSubmit = (values: z.infer<typeof formSchema>) => {
     console.log({ values });
+    postLawyerForm(values);
   };
 
   return (
@@ -195,7 +186,6 @@ const SignInPage = () => {
                 <FormLabel>Choisir vos categories</FormLabel>
                 <FormControl>
                   <Select
-                    defaultValue={[CategoryOptions[0]]}
                     isMulti
                     name="categories"
                     options={CategoryOptions}
@@ -216,10 +206,6 @@ const SignInPage = () => {
                 <FormLabel>Choisir vos jours de travail</FormLabel>
                 <FormControl>
                   <Select
-                    defaultValue={[
-                      WorkingDaysOptions[0],
-                      WorkingDaysOptions[1],
-                    ]}
                     isMulti
                     name="workingDays"
                     options={WorkingDaysOptions}
@@ -240,10 +226,6 @@ const SignInPage = () => {
                 <FormLabel>Choisir vos heures de Travail</FormLabel>
                 <FormControl>
                   <Select
-                    defaultValue={[
-                      WorkingHoursOptions[0],
-                      WorkingHoursOptions[1],
-                    ]}
                     isMulti
                     name="workingHours"
                     options={WorkingHoursOptions}

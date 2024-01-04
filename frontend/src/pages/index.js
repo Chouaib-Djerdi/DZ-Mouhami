@@ -5,6 +5,7 @@ import Offers from "./Offers";
 import SearchResult from "./SearchResult";
 import RdvForm from "./RdvForm";
 import ReviewPage from "./ReviewPage";
+import LawyerRegister from "./LawyerRegister";
 
 export {
   Landing,
@@ -14,4 +15,5 @@ export {
   SearchResult,
   RdvForm,
   ReviewPage,
+  LawyerRegister,
 };

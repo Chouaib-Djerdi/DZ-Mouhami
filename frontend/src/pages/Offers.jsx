@@ -33,7 +33,7 @@ const Offers = () => {
               })}
             </ul>
             <div className="justify-self-end">
-              <Link to="/register">
+              <Link to={`/register/${plan.title}`}>
                 <Button variant="lightBlue">Commander</Button>
               </Link>
             </div>
