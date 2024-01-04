@@ -19,9 +19,9 @@ class LawyerRegisterView(generics.CreateAPIView):
     def perform_create(self, serializer):
         validated_data = serializer.validated_data
         additional_data = self.request.data.get('additional_data')
-        subscription_type = self.request.data.get('subscription_type')
+        subscription_type = self.request.data.get('plan')
         payment_proof = self.request.data.get('payment_proof')
-        email = validated_data.get('email')
+        email = validated_data.get('emailAddress')
 
         if not Lawyer.objects.filter(email=email).exists():
             super(LawyerRegisterView, self).perform_create(serializer)
@@ -47,7 +47,7 @@ class LawyerLoginView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
-        email = request.data.get('email')
+        email = request.data.get('emailAddress')
         password = request.data.get('password')
 
         if email and password:

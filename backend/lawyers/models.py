@@ -8,7 +8,8 @@ class Lawyer(models.Model):
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
-    profilePicture = models.ImageField(upload_to='profile_pictures/', null=True, blank=True, default='profile_pictures/images.png')
+    passwordConfirm = models.CharField(max_length=255, null=True)
+    pfp = models.ImageField(upload_to='profile_pictures/', null=True, blank=True, default='profile_pictures/images.png')
     address = models.CharField(max_length=255)
     phoneNumber = models.CharField(max_length=12)
     socialMediaLink = models.URLField()
@@ -23,7 +24,7 @@ class Lawyer(models.Model):
         # Add more choices as needed
     ]
 
-    specialities = models.CharField(
+    categories = models.CharField(
         max_length=50,
         choices=SPECIALITY_CHOICES,
         blank=True
@@ -58,7 +59,7 @@ class Lawyer(models.Model):
         choices=WORKING_HOUR_CHOICES,
         blank=True
     )
-    subscription_type = models.CharField(max_length=50, choices=[("1_month", "1 Month"), ("3_months", "3 Months"), ("1_year", "1 Year")], blank=True, null=True)
+    plan = models.CharField(max_length=50, choices=[("1_month", "1 Month"), ("3_months", "3 Months"), ("1_year", "1 Year")], blank=True, null=True)
     payment_proof = models.ImageField(upload_to='subscription_payment_proofs/', null=True, blank=True)
     approved = models.BooleanField(default=False)
     ratings = models.FloatField(default=0.0)
