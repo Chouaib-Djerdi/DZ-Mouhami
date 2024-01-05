@@ -1,15 +1,11 @@
-import {
-  TableHead,
-  TableRow,
-  TableHeader,
-  TableCell,
-  TableBody,
-  Table,
-} from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 import { profile } from "../utils";
+import { RequestsList } from "../custom-components";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import { FaList, FaListCheck } from "react-icons/fa6";
+
 const requests = [profile, profile, profile, profile];
 
 const AdminDashboard = () => {
@@ -17,33 +13,29 @@ const AdminDashboard = () => {
     <div className="p-10 space-y-5">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Admin Tableau de bord</h1>
+
         <Button variant="outline">Log Out</Button>
       </div>
-      <h3 className="text-lg font-semibold">Liste des demandes :</h3>
-
-      <Table className="w-full">
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[300px]">Request Name</TableHead>
-            <TableHead className="w-[200px]">Request Submission Time</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {requests.map((request, index) => (
-            <TableRow key={index}>
-              <TableCell>
-                <Link
-                  className="font-medium text-primary hover:text-normalblue"
-                  to={`/admin/request/${request.id}`}
-                >
-                  Request 1
-                </Link>
-              </TableCell>
-              <TableCell>January 5, 2024, 10:30 AM</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+      <Tabs defaultValue="requests">
+        <TabsList>
+          <TabsTrigger value="requests">Demandes</TabsTrigger>
+          <TabsTrigger value="liste-avocats">Liste des avocats</TabsTrigger>
+        </TabsList>
+        <TabsContent value="requests" className="space-y-3 p-3">
+          <div className="flex gap-2 items-center">
+            <FaList />
+            <h3 className="text-lg font-semibold">Liste des demandes :</h3>
+          </div>
+          <RequestsList list={requests} />
+        </TabsContent>
+        <TabsContent value="liste-avocats" className="space-y-3 p-3">
+          <div className="flex gap-2 items-center">
+            <FaListCheck />
+            <h3 className="text-lg font-semibold">Liste des Avocats :</h3>
+          </div>
+          <RequestsList list={requests} />
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };

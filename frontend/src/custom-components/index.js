@@ -14,6 +14,7 @@ import Overview from "./dashboard/Overview";
 import Commentaires from "./dashboard/Commentaires";
 import RdvList from "./dashboard/RdvList";
 import Settings from "./dashboard/Settings";
+import RequestsList from "./admin/RequestsList";
 
 export {
   Nav,
@@ -32,4 +33,5 @@ export {
   Commentaires,
   RdvList,
   Settings,
+  RequestsList,
 };
