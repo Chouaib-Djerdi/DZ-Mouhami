@@ -11,7 +11,7 @@ class LawyerSerializer(serializers.ModelSerializer):
         child=serializers.CharField(max_length=50, allow_blank=True),
         allow_empty=True
     )
-    specialities = serializers.ChoiceField(
+    categories = serializers.ChoiceField(
         choices=Lawyer.SPECIALITY_CHOICES,
         allow_blank=True
     )

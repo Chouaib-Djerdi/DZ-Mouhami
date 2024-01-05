@@ -22,6 +22,11 @@ class LawyerRegisterView(generics.CreateAPIView):
         subscription_type = self.request.data.get('plan')
         payment_proof = self.request.data.get('payment_proof')
         email = validated_data.get('emailAddress')
+        password = validated_data.get('password')
+        password_confirm = validated_data.get('passwordConfirm')
+        
+        if password != password_confirm:
+            raise serializers.ValidationError("Le mot de passe et la confirmation du mot de passe ne correspondent pas.")
 
         if not Lawyer.objects.filter(email=email).exists():
             super(LawyerRegisterView, self).perform_create(serializer)
