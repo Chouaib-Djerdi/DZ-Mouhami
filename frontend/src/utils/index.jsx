@@ -81,6 +81,7 @@ export const plans = [
 ];
 
 export const profile = {
+  id: 1,
   name: "Ibrahim Hechmann",
   location: "Hechama, Setif",
   rating: 4,
@@ -88,6 +89,8 @@ export const profile = {
   description:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
   categories: ["Droit administratif", "Droit Affaires", "Droit civil"],
+  create_time: "January 5, 2024, 10:30 AM",
+  urls: ["https://web.facebook.com/", "https://github.com/"],
 };
 
 export const listOfProfiles = [profile, profile, profile];
