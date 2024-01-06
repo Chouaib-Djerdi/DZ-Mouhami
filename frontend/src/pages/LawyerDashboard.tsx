@@ -5,11 +5,15 @@ import {
   RdvList,
   Settings,
 } from "../custom-components";
+import { FaUserTie } from "react-icons/fa";
 
 const LawyerDashboard = () => {
   return (
-    <div className="p-10 space-y-5">
-      <h1 className="text-2xl font-bold">Tableau de bord</h1>
+    <div className="md:p-10 p-5 space-y-5">
+      <div className="flex items-center gap-2">
+        <FaUserTie size={30} />
+        <h1 className="text-2xl font-bold">Tableau de bord</h1>
+      </div>
       <Tabs defaultValue="overview">
         <TabsList>
           <TabsTrigger value="overview">Aperçu</TabsTrigger>

@@ -11,7 +11,7 @@ import { list_rdvs } from "../../utils";
 
 const RdvList = () => {
   return (
-    <div className="grid grid-cols-4 gap-5">
+    <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
       {list_rdvs.map((rdv, index) => (
         <Card key={index}>
           <CardHeader>

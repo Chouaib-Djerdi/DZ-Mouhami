@@ -17,12 +17,12 @@ const RequestPage = () => {
   const { id } = useParams();
 
   return (
-    <div className="p-10">
+    <div className="md:p-10 p-5">
       <h1 className="text-2xl font-bold mb-5">Request ID : {id}</h1>
       <Separator />
       <Card>
-        <CardHeader className="flex-row gap-5">
-          <img src={profile.pfp} alt="avocat-pfp" className="w-40 rounded-lg" />
+        <CardHeader className="md:flex-row gap-5">
+          <img src={profile.pfp} alt="avocat-pfp" className="w-40  rounded-lg" />
           <div className="flex flex-col gap-2">
             <CardTitle>{profile.name}</CardTitle>
             <CardDescription>{profile.create_time}</CardDescription>

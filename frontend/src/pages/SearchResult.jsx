@@ -14,7 +14,7 @@ const SearchResult = () => {
   const { input } = useParams();
 
   return (
-    <div className="px-40 py-10 space-y-10">
+    <div className="py-10 lg:px-40 md:px-20 px-5 space-y-10">
       <h1 className="text-4xl font-semibold">Avocats nommés {input}</h1>
       <div className="flex gap-5">
         <Select>

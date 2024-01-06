@@ -40,7 +40,7 @@ const ReviewPage = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5 py-10 px-40">
+    <div className="flex flex-col gap-5 py-10 lg:px-40 md:px-20 px-5">
       <h1 className="text-4xl font-bold">Écrire une critique</h1>
       <p>
         Nous apprécions vos commentaires. Veuillez évaluer votre avocat et

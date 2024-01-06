@@ -33,8 +33,8 @@ const LawyerRegister = () => {
   };
 
   return (
-    <div className="h-screen flex">
-      <div className="bg-side bg-cover w-1/2"></div>
+    <div className="h-screen flex justify-center">
+      <div className="hidden md:block bg-side bg-cover w-1/2"></div>
       <div className="flex flex-col items-center justify-center w-1/2 gap-3">
         <div className="flex flex-col items-center">
           <h1 className="text-2xl font-semibold">Connectez-vous</h1>

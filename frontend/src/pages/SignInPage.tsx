@@ -96,7 +96,7 @@ const SignInPage = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
-          className="max-w-4xl w-full grid grid-cols-2 gap-5"
+          className="max-w-4xl w-full md:grid md:grid-cols-2 gap-5"
         >
           <FormField
             control={form.control}
@@ -306,7 +306,7 @@ const SignInPage = () => {
           </div>
           <div className="col-span-2">
             <Button type="submit" className="w-full">
-              Submit
+              Soumettre
             </Button>
           </div>
         </form>

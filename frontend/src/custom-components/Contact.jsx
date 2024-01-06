@@ -11,8 +11,7 @@ const Contact = ({ phoneNumber, location }) => {
       <p className="font-semibold">Location :</p>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1135.4797852023378!2d5.409203721080299!3d36.185814585384755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f3159e73bf4871%3A0xdf60fb1e191dd125!2sStade%20Med%20Guessab%2C%20Ave%20Colonel%20Loth%2C%20Setif!5e0!3m2!1sen!2sdz!4v1703687904798!5m2!1sen!2sdz"
-        width="800"
-        height="400"
+        className="w-full h-72"
         loading="lazy"
       ></iframe>
       <div className="flex justify-between">

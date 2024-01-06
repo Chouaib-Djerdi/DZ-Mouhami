@@ -66,7 +66,7 @@ const RdvForm = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5 py-10 px-40">
+    <div className="flex flex-col gap-5 py-10 lg:px-40 md:px-20 px-10">
       <h1 className="text-4xl font-bold">Prendre un RDV</h1>
       <p>
         Remplissez le formulaire ci-dessous et nous confirmerons votre

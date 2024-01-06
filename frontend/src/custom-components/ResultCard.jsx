@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const ResultCard = ({ pfp, name, rating, location, categories }) => {
   return (
-    <div className="flex justify-between">
+    <div className="flex flex-col md:flex-row justify-between gap-5">
       <div className="flex gap-3">
         <img src={pfp} alt="avocat-pfp" className="rounded-lg" />
         <div className="flex flex-col gap-2">
@@ -27,8 +27,12 @@ const ResultCard = ({ pfp, name, rating, location, categories }) => {
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <Button size="lg" variant="outline">0775-23-45-99</Button>
-        <Button size="lg" variant="lightBlue">Prendre un RDV</Button>
+        <Button size="lg" variant="outline">
+          0775-23-45-99
+        </Button>
+        <Button size="lg" variant="lightBlue">
+          Prendre un RDV
+        </Button>
         <Button size="lg">Message</Button>
       </div>
     </div>

@@ -5,9 +5,9 @@ import { tickIcon } from "../assets/icons";
 
 const Offers = () => {
   return (
-    <div className="flex flex-col justify-center items-center py-10 gap-5">
+    <div className="flex flex-col justify-center items-center py-10 gap-5 px-5">
       <h1 className="text-4xl font-bold">Nos Plans</h1>
-      <div className="flex gap-5">
+      <div className="flex flex-col md:flex-row gap-5">
         {plans.map((plan, index) => (
           <div
             key={index}
