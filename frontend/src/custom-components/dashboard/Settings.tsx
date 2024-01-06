@@ -78,7 +78,7 @@ const Settings = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
-          className="grid grid-cols-2 gap-5"
+          className="md:grid md:grid-cols-2 gap-5"
         >
           <FormField
             control={form.control}

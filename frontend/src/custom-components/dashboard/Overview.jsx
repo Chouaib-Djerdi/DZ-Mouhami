@@ -8,9 +8,9 @@ import { stats } from "../../utils";
 
 const Overview = () => {
   return (
-    <div className="flex gap-5">
+    <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
       {stats.map((stat, index) => (
-        <Card key={index} className="flex-1">
+        <Card key={index} className="">
           <CardHeader>
             <div className="flex justify-between items-center">
               <p>{stat.title}</p>

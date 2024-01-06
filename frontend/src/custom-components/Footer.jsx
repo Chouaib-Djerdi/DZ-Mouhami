@@ -2,7 +2,7 @@ import { footerLinks } from "../utils";
 
 const Footer = () => {
   return (
-    <footer className="py-20 px-40 bg-primary">
+    <footer className="py-20 md:px-40 px-10 bg-primary">
       <div className="flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
         <div className="flex flex-col items-start">
           <a href="/">

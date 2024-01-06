@@ -7,6 +7,8 @@ import RdvForm from "./RdvForm";
 import ReviewPage from "./ReviewPage";
 import LawyerRegister from "./LawyerRegister";
 import LawyerDashboard from "./LawyerDashboard";
+import AdminDashboard from "./AdminDashboard";
+import RequestPage from "./RequestPage";
 export {
   Landing,
   SignInPage,
@@ -17,4 +19,6 @@ export {
   ReviewPage,
   LawyerRegister,
   LawyerDashboard,
+  AdminDashboard,
+  RequestPage,
 };

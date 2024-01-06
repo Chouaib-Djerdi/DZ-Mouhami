@@ -13,16 +13,34 @@ import { Link } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import { components } from "../utils";
 import { postUserCred } from "../utils/fetchAPI";
+import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Nav = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className="px-40 py-3 flex justify-between items-center border-b-2">
+    <div className="lg:px-40 md:px-20 px-5 py-3 flex justify-between items-center border-b-2">
       <div>
         <Link to="/">
           <h1 className="font-bold text-xl">DZ-MOUHAMI</h1>
         </Link>
       </div>
-      <div className="">
+
+      <div className="md:hidden">
+        <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {isMenuOpen ? (
+            <IoCloseSharp className="h-6 w-6" />
+          ) : (
+            <GiHamburgerMenu className="h-6 w-6" />
+          )}
+        </button>
+      </div>
+
+      <div
+        className={`${isMenuOpen ? "flex" : "hidden"} md:flex gap-36`}
+      >
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -79,31 +97,31 @@ const Nav = () => {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-      </div>
-      <div className="flex gap-2">
-        <Link to="/offers">
-          <Button>Etre un Avocat</Button>
-        </Link>
-        <GoogleLogin
-          onSuccess={(credentialResponse) => {
-            // get Credential
-            console.log(credentialResponse);
+        <div className="flex gap-2">
+          <Link to="/offers">
+            <Button>Etre un Avocat</Button>
+          </Link>
+          <GoogleLogin
+            onSuccess={(credentialResponse) => {
+              // get Credential
+              console.log(credentialResponse);
 
-            postUserCred(credentialResponse)
-              .then((response) => {
-                // handle successful login
-                console.log(response);
-              })
-              .catch((error) => {
-                // handle error
-                console.log(error);
-              });
-          }}
-          onError={() => {
-            console.log("Login Failed");
-          }}
-          useOneTap
-        />
+              postUserCred(credentialResponse)
+                .then((response) => {
+                  // handle successful login
+                  console.log(response);
+                })
+                .catch((error) => {
+                  // handle error
+                  console.log(error);
+                });
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+            useOneTap
+          />
+        </div>
       </div>
     </div>
   );

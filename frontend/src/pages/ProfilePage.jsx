@@ -13,7 +13,7 @@ import {
   RatingOverview,
 } from "../custom-components";
 import Contact from "../custom-components/Contact";
-import { dollarIcon, medalStarIcon, verifyIcon } from "../assets/icons";
+import { dollarIcon, medalStarIcon } from "../assets/icons";
 import { comments, ratings } from "../utils";
 
 const profile = {
@@ -30,9 +30,9 @@ const profile = {
 
 const ProfilePage = () => {
   return (
-    <div className="py-10 px-40">
+    <div className="py-10 lg:px-40 md:px-20 px-5">
       <ProfileOverview {...profile} />
-      <nav className="space-x-8 p-3 border shadow-sm rounded-lg my-3 sticky top-0 z-50 bg-white">
+      <nav className="flex justify-evenly p-3 border shadow-sm rounded-lg my-3 sticky top-0 z-50 bg-white">
         <Button variant="ghost">
           <a href="#apropos">À propos</a>
         </Button>
@@ -93,7 +93,7 @@ const ProfilePage = () => {
         </div>
 
         {/* Aside Section */}
-        <div className="flex flex-col gap-10 max-w-sm">
+        <div className="hidden xl:flex flex-col gap-10 w-2/3">
           <Contributions />
           <ProfileCard {...profile} />
         </div>

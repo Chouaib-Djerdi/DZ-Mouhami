@@ -1,6 +1,5 @@
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -19,7 +18,7 @@ import { Link } from "react-router-dom";
 const ProfileOverview = ({ name, pfp, location, rating, commentsNumber }) => {
   return (
     <Card>
-      <CardHeader className="flex-row justify-between">
+      <CardHeader className="lg:flex-row flex-col md:justify-between">
         <div className="flex gap-5">
           <div className="flex flex-col gap-3">
             <img src={pfp} alt="avocat-pfp" className="w-48 rounded-lg" />
@@ -32,7 +31,7 @@ const ProfileOverview = ({ name, pfp, location, rating, commentsNumber }) => {
             <CardDescription className="text-base text-muted-foreground">
               Avocat de la famille à {location}
             </CardDescription>
-            <div className="flex items-center gap-3">
+            <div className="flex md:flex-row flex-col md:items-center gap-3">
               <div className="flex items-center gap-1">
                 <RatingStar rating={rating} />
                 <p className="font-semibold">{rating}</p>
@@ -41,7 +40,7 @@ const ProfileOverview = ({ name, pfp, location, rating, commentsNumber }) => {
             </div>
           </div>
         </div>
-        <div className="w-[30%]">
+        <div className="">
           <Card>
             <CardHeader className="gap-3">
               <CardTitle>Licence depuis 15 ans</CardTitle>

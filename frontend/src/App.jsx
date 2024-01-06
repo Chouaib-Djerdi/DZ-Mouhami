@@ -9,17 +9,26 @@ import {
   SearchResult,
   SignInPage,
   LawyerDashboard,
+  AdminDashboard,
+  RequestPage,
 } from "./pages";
 import { Nav, Footer } from "./custom-components";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const MainContent = () => {
   const location = useLocation();
-  const hideOnRoutes = ["/compte", "/compte/avocat"];
-
+  const hideOnRoutes = [
+    "/compte",
+    "/compte/avocat",
+    "/admin",
+    "/admin/request",
+  ];
+  const hideNavAndFooter = hideOnRoutes.some((route) =>
+    location.pathname.startsWith(route)
+  );
   return (
     <main>
-      {!hideOnRoutes.includes(location.pathname) && <Nav />}
+      {!hideNavAndFooter && <Nav />}
 
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -33,9 +42,11 @@ const MainContent = () => {
         <Route path="/compte" element={<LawyerRegister />} />
         {/* path="/avocat:id" */}
         <Route path="/compte/avocat" element={<LawyerDashboard />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/request/:id" element={<RequestPage />} />
       </Routes>
 
-      {!hideOnRoutes.includes(location.pathname) && <Footer />}
+      {!hideNavAndFooter && <Footer />}
     </main>
   );
 };
