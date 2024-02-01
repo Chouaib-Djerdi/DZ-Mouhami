@@ -10,7 +10,7 @@ const About = ({ categories, description }) => {
       <div>
         <p>
           <span className="font-semibold">Categories</span> :{" "}
-          {categories.join(", ")}
+          {categories.map((obj) => `${obj.value},`)}
         </p>
       </div>
       <div>

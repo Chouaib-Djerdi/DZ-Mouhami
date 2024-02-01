@@ -1,5 +1,5 @@
 import { FaUsers } from "react-icons/fa6";
-import { avocatPfp } from "../assets/images";
+import { avocatPfp, sideImageOne, sideImageTwo } from "../assets/images";
 
 export const footerLinks = [
   {
@@ -80,20 +80,43 @@ export const plans = [
   },
 ];
 
-export const profile = {
-  id: 1,
-  name: "Ibrahim Hechmann",
-  location: "Hechama, Setif",
-  rating: 4,
-  pfp: avocatPfp,
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
-  categories: ["Droit administratif", "Droit Affaires", "Droit civil"],
-  create_time: "January 5, 2024, 10:30 AM",
-  urls: ["https://web.facebook.com/", "https://github.com/"],
-};
-
-export const listOfProfiles = [profile, profile, profile];
+export const components = [
+  {
+    title: "Profil de l'Avocat",
+    href: "/docs/primitives/profil-avocat",
+    description:
+      "Un profil détaillé de chaque avocat, y compris leur éducation, expérience et domaines d'expertise.",
+  },
+  {
+    title: "Études de Cas",
+    href: "/docs/primitives/etudes-de-cas",
+    description:
+      "Descriptions détaillées des affaires précédentes que le cabinet a traitées, démontrant leur expertise et leur succès.",
+  },
+  {
+    title: "Services Juridiques",
+    href: "/docs/primitives/services-juridiques",
+    description:
+      "Une liste complète des services offerts par le cabinet, tels que le contentieux, le droit des sociétés, les préjudices corporels, etc.",
+  },
+  {
+    title: "Témoignages des Clients",
+    href: "/docs/primitives/temoignages-clients",
+    description: "Retours et avis des clients précédents.",
+  },
+  {
+    title: "Actualités Juridiques",
+    href: "/docs/primitives/actualites-juridiques",
+    description:
+      "Mises à jour sur les actualités juridiques récentes et comment elles pourraient impacter les clients.",
+  },
+  {
+    title: "Contactez-Nous",
+    href: "/docs/primitives/contactez-nous",
+    description:
+      "Informations sur comment contacter le cabinet, y compris un formulaire pour que les clients potentiels puissent entrer en contact.",
+  },
+];
 
 export const wilayas = [
   { id: "1", code: "1", nom: "Adrar" },
@@ -146,43 +169,20 @@ export const wilayas = [
   { id: "48", code: "48", nom: "Relizane" },
 ];
 
-export const components = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-];
+export const profile = {
+  id: 1,
+  name: "Ibrahim Hechmann",
+  location: "Hechama, Setif",
+  rating: 4,
+  pfp: avocatPfp,
+  description:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
+  categories: ["Droit administratif", "Droit Affaires", "Droit civil"],
+  create_time: "January 5, 2024, 10:30 AM",
+  urls: ["https://web.facebook.com/", "https://github.com/"],
+};
+
+export const listOfProfiles = [profile, profile, profile];
 
 export const CategoryOptions = [
   { value: "civil", label: "Civil Law" },
@@ -239,35 +239,6 @@ export const stats = [
   },
 ];
 
-export const comments = [
-  {
-    username: "Chihab Hmz",
-    rating: 4,
-    title: "Un soutien incroyable dans une affaire hautement conflictuelle",
-    comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
-    timestamp: "September 13, 2023",
-  },
-  {
-    username: "Chihab Hmz",
-    rating: 4,
-    title: "Un soutien incroyable dans une affaire hautement conflictuelle",
-    comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
-    timestamp: "September 13, 2023",
-  },
-];
-
-export const ratings = {
-  rating: 4.0,
-  commentsNumber: 39,
-  fivePercentage: 88,
-  fourPercentage: 67,
-  threePercentage: 44,
-  twoPercentage: 32,
-  onePercentage: 10,
-};
-
 export const list_rdvs = [
   {
     name: "Raid Salhi",
@@ -318,3 +289,108 @@ export const list_rdvs = [
     time: "10h-12h",
   },
 ];
+
+export const services = [
+  {
+    title: "rencontrez nos meilleurs avocats disponibles en Algérie",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facerererum reprehenderit nam blanditiis pariatur magnam ex inventore cupiditate vel accusantium fuga explicabo tenetur ipsa deleniti consequatur quia, veritatis praesentium voluptatibus!",
+    imgUrl: sideImageOne,
+  },
+  {
+    title: "rencontrez nos meilleurs avocats disponibles en Algérie",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facerererum reprehenderit nam blanditiis pariatur magnam ex inventore cupiditate vel accusantium fuga explicabo tenetur ipsa deleniti consequatur quia, veritatis praesentium voluptatibus!",
+    imgUrl: sideImageTwo,
+  },
+];
+
+export const Avocat = {
+  firstName: "Chouaib",
+  lastName: "Djerdi",
+  emailAddress: "djerdichouaib@gmail.com",
+  phoneNumber: "0552759288",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus maximus enim, id fermentum est dignissim eu. Vivamus hendrerit feugiat pretium. Quisque commodo justo at facilisis congue. Aliquam consectetur quam eget imperdiet consequat. Sed convallis metus at faucibus mollis.",
+  positionLatLng: {
+    lat: 0,
+    lng: 0,
+    address: "Rue Hachemi Talbi 86, Setif",
+  },
+  password: "123456789",
+  passwordConfirm: "123456789",
+  pfp: avocatPfp,
+  categories: [
+    {
+      value: "Droit Civil",
+      label: "Civil Law",
+    },
+  ],
+  workingDays: [
+    {
+      value: "dimanche",
+      label: "Dimanche",
+    },
+    {
+      value: "lundi",
+      label: "Lundi",
+    },
+    {
+      value: "mardi",
+      label: "Mardi",
+    },
+    {
+      value: "mercredi",
+      label: "Mercredi",
+    },
+    {
+      value: "jeudi",
+      label: "Jeudi",
+    },
+  ],
+  workingHours: [
+    {
+      value: "8-10",
+      label: "8h-10h",
+    },
+    {
+      value: "10-12",
+      label: "10h-12h",
+    },
+    {
+      value: "14-16",
+      label: "14h-16h",
+    },
+  ],
+  urls: [
+    {
+      value: "https://www.facebook.com/",
+    },
+  ],
+  rating: 0,
+  commentsNumber: 0,
+  plan: "Plan Base",
+  ratings: {
+    rating: 1.0,
+    commentsNumber: 1,
+    fivePercentage: 0,
+    fourPercentage: 0,
+    threePercentage: 0,
+    twoPercentage: 0,
+    onePercentage: 100,
+  },
+  comments: [
+    {
+      username: "chouaib4",
+      rating: 1,
+      title: "Un soutien incroyable dans une affaire hautement conflictuelle",
+      comment:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
+      timestamp: "Janvier 27, 2024",
+    },
+  ],
+};
+
+export const Avocats = [Avocat];
+
+export const comments = [];

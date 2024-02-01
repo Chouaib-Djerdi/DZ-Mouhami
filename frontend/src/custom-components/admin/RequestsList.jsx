@@ -23,12 +23,12 @@ const RequestsList = ({ list }) => {
             <TableCell>
               <Link
                 className="font-medium text-primary hover:text-normalblue"
-                to={`/admin/request/${item.id}`}
+                to={`/admin/request/1`}
               >
-                Request 1
+                Avocat ID : 1
               </Link>
             </TableCell>
-            <TableCell>January 5, 2024, 10:30 AM</TableCell>
+            <TableCell>January 27, 2024</TableCell>
           </TableRow>
         ))}
       </TableBody>

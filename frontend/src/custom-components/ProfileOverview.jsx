@@ -15,7 +15,14 @@ import {
 } from "../assets/icons";
 import { Link } from "react-router-dom";
 
-const ProfileOverview = ({ name, pfp, location, rating, commentsNumber }) => {
+const ProfileOverview = ({
+  firstName,
+  lastName,
+  pfp,
+  positionLatLng,
+  rating,
+  commentsNumber,
+}) => {
   return (
     <Card>
       <CardHeader className="lg:flex-row flex-col md:justify-between">
@@ -27,9 +34,11 @@ const ProfileOverview = ({ name, pfp, location, rating, commentsNumber }) => {
             </Link>
           </div>
           <div className="flex flex-col gap-2">
-            <CardTitle className="text-4xl">{name}</CardTitle>
+            <CardTitle className="text-4xl">
+              {lastName} {firstName}
+            </CardTitle>
             <CardDescription className="text-base text-muted-foreground">
-              Avocat de la famille à {location}
+              Avocat Droit Civil à {positionLatLng.address}
             </CardDescription>
             <div className="flex md:flex-row flex-col md:items-center gap-3">
               <div className="flex items-center gap-1">

@@ -16,17 +16,19 @@ import { postUserCred } from "../utils/fetchAPI";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import { FaScaleBalanced, FaAnglesDown } from "react-icons/fa6";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="lg:px-40 md:px-20 px-5 py-3 flex justify-between items-center border-b-2">
-      <div>
-        <Link to="/">
+      <Link to="/">
+        <div className="flex items-center gap-1">
+          <FaScaleBalanced size={24} />
           <h1 className="font-bold text-xl">DZ-MOUHAMI</h1>
-        </Link>
-      </div>
+        </div>
+      </Link>
 
       <div className="md:hidden">
         <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -38,9 +40,7 @@ const Nav = () => {
         </button>
       </div>
 
-      <div
-        className={`${isMenuOpen ? "flex" : "hidden"} md:flex gap-36`}
-      >
+      <div className={`${isMenuOpen ? "flex" : "hidden"} md:flex gap-36`}>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -54,27 +54,30 @@ const Nav = () => {
                         href="/"
                       >
                         <div className="mb-2 mt-4 text-lg font-medium">
+                          <FaScaleBalanced />
                           DZ-MOUHAMI
                         </div>
                         <p className="text-sm leading-tight text-muted-foreground">
-                          Beautifully designed components that you can copy and
-                          paste into your apps. Accessible. Customizable. Open
-                          Source.
+                          Bienvenue sur le site web de notre cabinet d’avocats,
+                          votre source fiable pour des conseils juridiques
+                          experts
                         </p>
                       </a>
                     </NavigationMenuLink>
                   </li>
-                  <ListItem href="/docs" title="Introduction">
-                    Re-usable components built using Radix UI and Tailwind CSS.
+                  <ListItem href="/docs" title="Rencontrez Nos Avocats">
+                    Découvrez nos avocats à travers leurs profils détaillés
                   </ListItem>
-                  <ListItem href="/docs/installation" title="Installation">
-                    How to install dependencies and structure your app.
+                  <ListItem href="/docs/installation" title="Études de Cas">
+                    Explorez nos études de cas pour comprendre notre expertise
+                    et notre succès
                   </ListItem>
                   <ListItem
                     href="/docs/primitives/typography"
-                    title="Typography"
+                    title="Services Juridiques"
                   >
-                    Styles for headings, paragraphs, lists...etc
+                    Consultez nos services juridiques pour découvrir comment
+                    nous pouvons vous aider
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
@@ -99,7 +102,10 @@ const Nav = () => {
         </NavigationMenu>
         <div className="flex gap-2">
           <Link to="/offers">
-            <Button>Etre un Avocat</Button>
+            <Button className="gap-1">
+              <FaAnglesDown size={14} />
+              Etre un Avocat
+            </Button>
           </Link>
           <GoogleLogin
             onSuccess={(credentialResponse) => {

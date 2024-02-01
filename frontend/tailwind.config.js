@@ -18,8 +18,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        hero: "url('assets/images/bg-hero.svg')",
-        heroo: "url('assets/images/bg-hero22.jpg')",
+        hero: "url('assets/images/bg-Landing.jpg')",
         side: "url('assets/images/side-image.jpg')",
       },
       colors: {

@@ -14,24 +14,12 @@ import {
 } from "../custom-components";
 import Contact from "../custom-components/Contact";
 import { dollarIcon, medalStarIcon } from "../assets/icons";
-import { comments, ratings } from "../utils";
-
-const profile = {
-  name: "Ibrahim Hechmann",
-  location: "Hechama, Setif",
-  rating: 4,
-  pfp: avocatPfp,
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sunt dolore natus quibusdam laudantium hic nemo, soluta sequi architecto rem impedit repudiandae et corporis eos nihil beatae, maxime velit. Libero.",
-  categories: ["Droit administratif", "Droit Affaires", "Droit civil"],
-  commentsNumber: 39,
-  phoneNumber: "(206) 717-8680",
-};
+import { Avocat } from "../utils";
 
 const ProfilePage = () => {
   return (
     <div className="py-10 lg:px-40 md:px-20 px-5">
-      <ProfileOverview {...profile} />
+      <ProfileOverview {...Avocat} />
       <nav className="flex justify-evenly p-3 border shadow-sm rounded-lg my-3 sticky top-0 z-50 bg-white">
         <Button variant="ghost">
           <a href="#apropos">À propos</a>
@@ -52,13 +40,13 @@ const ProfilePage = () => {
       <div className="flex justify-between gap-10 my-10">
         <div className="flex flex-col gap-20">
           <About
-            categories={profile.categories}
-            description={profile.description}
+            categories={Avocat.categories}
+            description={Avocat.description}
           />
           <Separator />
           <Contact
-            phoneNumber={profile.phoneNumber}
-            location={profile.location}
+            phoneNumber={Avocat.phoneNumber}
+            location={Avocat.positionLatLng.address}
           />
           <Separator />
           <div className="space-y-5" id="commentaires">
@@ -71,9 +59,9 @@ const ProfilePage = () => {
                 <Link to="/review">Écrire une critique</Link>
               </Button>
             </div>
-            <RatingOverview {...ratings} />
+            <RatingOverview {...Avocat.ratings} />
             <div>
-              {comments.map((comment, index) => (
+              {Avocat.comments.map((comment, index) => (
                 <RatingComment key={index} {...comment} />
               ))}
             </div>
@@ -95,7 +83,7 @@ const ProfilePage = () => {
         {/* Aside Section */}
         <div className="hidden xl:flex flex-col gap-10 w-2/3">
           <Contributions />
-          <ProfileCard {...profile} />
+          <ProfileCard {...Avocat} />
         </div>
       </div>
     </div>

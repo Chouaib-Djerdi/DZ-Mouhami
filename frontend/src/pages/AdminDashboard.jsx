@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 
-import { profile } from "../utils";
+import { Avocat, profile } from "../utils";
 import { RequestsList } from "../custom-components";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { FaList, FaListCheck } from "react-icons/fa6";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
 
-const requests = [profile, profile, profile, profile];
+const requests = [Avocat];
 
 const AdminDashboard = () => {
   return (
@@ -20,7 +20,7 @@ const AdminDashboard = () => {
 
         <Button variant="outline">Log Out</Button>
       </div>
-      <Tabs defaultValue="requests">
+      <Tabs defaultValue="liste-avocats">
         <TabsList>
           <TabsTrigger value="requests">Demandes</TabsTrigger>
           <TabsTrigger value="liste-avocats">Liste des avocats</TabsTrigger>

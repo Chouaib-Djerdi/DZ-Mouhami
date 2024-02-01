@@ -18,16 +18,16 @@ function getCookie(name) {
 
 export const postUserCred = async (credentialResponse) => {
   console.log("posted");
-  console.log(getCookie("csrftoken"));
+  // console.log(getCookie("csrftoken"));
   return await axios.post(
     `${BASE_URL}/google/login/`,
     {
       access_token: credentialResponse,
     },
     {
-      headers: {
-        "X-CSRFToken": getCookie("csrftoken"),
-      },
+      // headers: {
+      //   "X-CSRFToken": getCookie("csrftoken"),
+      // },
     }
   );
 };

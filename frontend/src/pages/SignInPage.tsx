@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Select from "react-select";
 import { cn } from "@/lib/utils";
 import { useParams } from "react-router-dom";
+import { useGeolocation } from "@uidotdev/usehooks";
 import { postLawyerForm } from "../utils/fetchAPI";
 import {
   WorkingDaysOptions,
@@ -38,6 +39,10 @@ const formSchema = z
     emailAddress: z.string().email(),
     phoneNumber: z.string().min(8),
     description: z.string().min(100),
+    positionLatLng: z.object({
+      lat: z.number(),
+      lng: z.number(),
+    }),
     password: z.string().min(8),
     passwordConfirm: z.string(),
     pfp: z.any(),
@@ -62,6 +67,8 @@ const formSchema = z
 
 const SignInPage = () => {
   const { plan } = useParams();
+  const { latitude, longitude } = useGeolocation();
+  const state = { lat: latitude || 0, lng: longitude || 0 };
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -71,6 +78,8 @@ const SignInPage = () => {
       emailAddress: "",
       phoneNumber: "",
       description: "",
+      pfp: "",
+      positionLatLng: state,
       password: "",
       passwordConfirm: "",
       categories: [CategoryOptions[0]],
@@ -88,7 +97,7 @@ const SignInPage = () => {
 
   const handleSubmit = (values: z.infer<typeof formSchema>) => {
     console.log({ values });
-    postLawyerForm(values);
+    // postLawyerForm(values);
   };
 
   return (

@@ -19,6 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 
 import { StarRating } from "../custom-components";
+import { Link } from "react-router-dom";
 
 const formSchema = z.object({
   title: z.string().min(3),
@@ -91,9 +92,11 @@ const ReviewPage = () => {
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full">
-            Soumettre
-          </Button>
+          <Link to="/profile">
+            <Button type="submit" className="w-full">
+              Soumettre
+            </Button>
+          </Link>
         </form>
       </Form>
     </div>

@@ -74,7 +74,7 @@ const LawyerRegister = () => {
               )}
             />
             <Button type="submit" className="w-full">
-              <Link to="/compte/avocat">Se Connecter</Link>
+              <Link to="/admin">Se Connecter</Link>
             </Button>
           </form>
         </Form>

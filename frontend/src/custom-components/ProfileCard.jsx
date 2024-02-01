@@ -10,8 +10,9 @@ import RatingStar from "./RatingStar";
 import { Link } from "react-router-dom";
 
 const ProfileCard = ({
-  name,
-  location,
+  firstName,
+  lastName,
+  positionLatLng,
   rating,
   pfp,
   categories,
@@ -24,7 +25,9 @@ const ProfileCard = ({
         <div className="flex flex-col gap-3">
           <div className="flex flex-col gap-2">
             <Link to={`profile/`}>
-              <CardTitle>{name}</CardTitle>
+              <CardTitle>
+                {lastName} {firstName}
+              </CardTitle>
             </Link>
             <RatingStar rating={rating} />
           </div>
@@ -32,7 +35,7 @@ const ProfileCard = ({
             <CardDescription className="uppercase font-semibold tracking-wide">
               Location
             </CardDescription>
-            <CardDescription>{location}</CardDescription>
+            <CardDescription>{positionLatLng.address}</CardDescription>
           </div>
         </div>
       </CardHeader>
@@ -40,7 +43,7 @@ const ProfileCard = ({
         <p className="text-gray-500 uppercase font-semibold tracking-wide">
           Categories
         </p>
-        <p>{categories.join(", ")}</p>
+        <p>{categories.map((obj) => `${obj.value}, `)}</p>
       </CardContent>
       <CardFooter className="p-3 flex-col items-start">
         <p className="text-muted-foreground uppercase font-semibold tracking-wide">
